@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>World test</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#000}#i{position:fixed;left:8px;top:8px;color:#fff;font:12px monospace;background:#0008;padding:6px}</style></head>
+<body><div id="i"></div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { buildWorld, BIG_BEN, createComposer } from '/src/world.js';
+const r = new THREE.WebGLRenderer({ antialias: true }); r.setSize(innerWidth, innerHeight); r.setPixelRatio(Math.min(devicePixelRatio, 2));
+r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap; r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = 0.55;
+document.body.appendChild(r.domElement);
+const s = new THREE.Scene(); const cam = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 0.5, 4000);
+const t0 = performance.now(); const w = buildWorld(s, r);
+const views = { a: [[150, 40, -120], [BIG_BEN.x, 50, BIG_BEN.z]], b: [[-60, 3, -40], [BIG_BEN.x, 40, BIG_BEN.z]], c: [[200, 120, 300], [150, 0, -100]], d: [[180, -4, 60], [180, -3, -60]], e: [[0, 500, 1], [0, 0, 0]] };
+const q=new URLSearchParams(location.search); let v = views[q.get('v') || 'a']; if(q.get('cam')) v=[q.get('cam').split(',').map(Number), q.get('at').split(',').map(Number)];
+cam.position.set(...v[0]); const oc = new OrbitControls(cam, r.domElement); oc.target.set(...v[1]); oc.update();
+w.sun.position.set(cam.position.x, 0, cam.position.z);
+let comp = createComposer(r, s, cam, q.get('pp')==='0'?'low':'high');
+const fit = () => { r.setSize(innerWidth, innerHeight); comp.setSize(innerWidth*r.getPixelRatio(), innerHeight*r.getPixelRatio()); cam.aspect = innerWidth / Math.max(1, innerHeight); cam.updateProjectionMatrix(); }; addEventListener('resize', fit); setInterval(() => { if (r.domElement.width === 0 && innerWidth) fit(); }, 300);
+let last = performance.now(), frames = 0, fps = 0;
+document.getElementById('i').textContent = 'build ' + (performance.now() - t0).toFixed(0) + 'ms';
+r.setAnimationLoop((now) => { const dt = (now - last) / 1000; last = now; frames++; w.update(dt, now / 1000); comp.render();
+  if (frames % 30 === 0) document.getElementById('i').textContent = 'build ' + (performance.now() - t0 | 0) + 'ms · fps ' + (1 / dt).toFixed(0) + ' · calls ' + r.info.render.calls + ' tris ' + r.info.render.triangles; });
+</script></body></html>

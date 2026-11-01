@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-01",
+  "pretty": "Sunday, 1 November 2026",
+  "lead": {
+    "title": "Burnham says UK open to slavery apology as King tours Caribbean",
+    "summary": "The row over Britain’s role in the slave trade dominated Westminster and the Sunday politics agenda after Prime Minister Andy Burnham said he was open to an apology while rejecting reparations. For London readers, it is the biggest UK political story of the weekend because it cuts across government policy, the monarchy’s Caribbean tour and wider culture-war debate.",
+    "source": "Sky News",
+    "url": "https://news.sky.com/story/politics-latest-burnham-labour-man-city-badenoch-farage-polanski-12593360?postid=12626110"
+  },
+  "stories": [
+    {
+      "title": "G20 family photo scrapped after UK and allies refuse to appear with Russia",
+      "summary": "A diplomatic rift at the G20 escalated when the traditional leaders’ photo-op was cancelled after the UK, Australia and others would not be pictured with Russia’s foreign minister.",
+      "section": "world",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/world/2026/oct/31/us-cancels-g20-family-photo-after-australia-uk-and-others-refuse-to-appear-with-russia"
+    },
+    {
+      "title": "Man arrested in London in ‘significant development’ in Leeds murder investigation",
+      "summary": "Police say an arrest in London marks a major step in the investigation into the Leeds murder case, making it one of the most directly relevant crime stories for Londoners.",
+      "section": "london",
+      "source": "Sky News",
+      "url": "https://news.sky.com/uk"
+    },
+    {
+      "title": "Tech sell-off wipes nearly $1tn from US markets after weak earnings",
+      "summary": "Global markets were jolted after disappointing big-tech earnings triggered a sharp sell-off, a major business story with clear implications for UK investors and pension savers.",
+      "section": "business",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/business/2026/oct/31/tech-sell-off-drives-us-markets-down-by-nearly-1tn-after-subpar-earnings-reports"
+    },
+    {
+      "title": "Russell Brand trial hears accusers had ‘nothing to gain’, court told",
+      "summary": "In one of the weekend’s biggest culture and media stories, prosecutors told jurors the women accusing Russell Brand were not led by publicity and had come forward bravely.",
+      "section": "culture",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/31/florid-language-and-long-silences-five-things-we-learned-from-week-three-of-russell-brands-rape-trial"
+    },
+    {
+      "title": "Former Ireland European 1,500m champion dies aged 34",
+      "summary": "The death of a former European middle-distance champion became a major weekend sports story across the UK and Ireland, drawing tributes from the athletics world.",
+      "section": "sport",
+      "source": "Sky News",
+      "url": "https://news.sky.com/"
+    }
+  ]
+}
